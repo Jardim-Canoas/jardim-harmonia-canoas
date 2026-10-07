@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/*
+ * Paleta tirada das 4 versões oficiais do logo (pasta _materiais/logo).
+ * Tema único (sem dark mode): é LP de marca.
+ */
+:root {
+  --verde: #026938;
+  --verde-escuro: #172f1b;
+  --areia: #d7cbae;
+  --areia-clara: #f4efe4;
+  --tinta: #1d1d1b;
+  --tinta-suave: #4a4a45;
+  --branco: #ffffff;
+  --erro: #b42318;
+}
+
+@theme inline {
+  --color-verde: var(--verde);
+  --color-verde-escuro: var(--verde-escuro);
+  --color-areia: var(--areia);
+  --color-areia-clara: var(--areia-clara);
+  --color-tinta: var(--tinta);
+  --color-tinta-suave: var(--tinta-suave);
+  --color-erro: var(--erro);
+  --font-sans: var(--font-sans-base);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--areia-clara);
+  color: var(--tinta);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}

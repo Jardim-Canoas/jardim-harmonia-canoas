@@ -1,0 +1,29 @@
+# dependências
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# env e logs
+.env*
+*.log
+npm-debug.log*
+
+# sistema
+.DS_Store
+Thumbs.db
+
+# Nada de IA e nada de dado de cliente no Git.
+# A cópia oficial destes arquivos vive no Project knowledge, fora do repo.
+CLAUDE.md
+AGENTS.md
+.claude/
+CONTEXTO-LEADS.md
+docs/PENDENCIAS.md
+/_materiais/
