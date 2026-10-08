@@ -142,6 +142,15 @@ html[data-hero-escuro] .cab:not(.solido) .bt-linha { border-color: rgba(215,203,
 .obra ol button[aria-pressed="true"] b { background: var(--ipe); color: var(--verde-escuro); }
 @media (max-width: 900px) { .obra-g { grid-template-columns: 1fr; } }
 
+/* ───────── infraestrutura completa (lista da Morada dos Pássaros) ───────── */
+.infra { background: var(--papel); padding-block: clamp(70px, 9vw, 120px); }
+.infra h2 { margin-top: 14px; max-width: 20ch; }
+.infra ul { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; background: var(--linha-escura); border: 1px solid var(--linha-escura); margin: clamp(32px, 4vw, 56px) 0; list-style: none; padding: 0; }
+.infra li { display: flex; flex-direction: column; gap: 14px; background: var(--papel); padding: clamp(18px, 2vw, 28px); font-weight: 600; font-size: 16px; line-height: 1.25; color: var(--verde-escuro); }
+.infra li svg { width: 30px; height: 30px; color: var(--verde); }
+@media (max-width: 1000px) { .infra ul { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .infra ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } .infra li { font-size: 15px; } .infra li:last-child { grid-column: span 2; } }
+
 /* ───────── cadastro ───────── */
 .cad { background: var(--ipe); color: var(--verde-escuro); padding-block: clamp(70px, 9vw, 120px); }
 .cad-g { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: clamp(32px, 6vw, 96px); align-items: center; }

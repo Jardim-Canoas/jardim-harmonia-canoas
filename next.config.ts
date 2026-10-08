@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   // Desliga a geração automática do AGENTS.md pelo `next dev`
   agentRules: false,
+  // Codespaces abre o preview em 127.0.0.1; sem isso o `next dev` bloqueia o JS e nada hidrata.
+  allowedDevOrigins: ["127.0.0.1"],
 };
 
 export default nextConfig;

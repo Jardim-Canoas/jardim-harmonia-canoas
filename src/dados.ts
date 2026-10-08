@@ -92,15 +92,15 @@ export const hero = {
   botao: "Ver condições de lançamento", // copy nova
   botaoSecundario: "Conhecer o bairro", // copy nova
   dicaRolagem: "Role para abrir", // copy nova
-  imagem: { src: "/img/carrosseis/portal.webp", alt: "Portal de entrada com cobertura curva de madeira" },
+  imagem: { src: "/img/morada/entrada-aerea.webp", alt: "Portal de entrada e rotatória vistos do alto" },
   // l/t/w: posição e largura no desktop. lm/tm/wm: no celular (sem lm, some no celular). d: profundidade.
   soltas: [
-    { src: "/img/carrosseis/praca-lago-800.webp", l: 4, t: 30, w: 15, lm: 3, tm: 47, wm: 28, d: 0.7 },
+    { src: "/img/morada/portal-frontal-800.webp", l: 4, t: 30, w: 15, lm: 3, tm: 47, wm: 28, d: 0.7 },
     { src: "/img/carrosseis/quadra-areia-800.webp", l: 80, t: 24, w: 16, lm: 69, tm: 45, wm: 28, d: 1 },
     { src: "/img/carrosseis/playground-800.webp", l: 9, t: 64, w: 13, lm: 2, tm: 88, wm: 24, d: 1.3 },
-    { src: "/img/carrosseis/tenis-800.webp", l: 84, t: 62, w: 12, lm: 74, tm: 88, wm: 24, d: 0.5 },
-    { src: "/img/carrosseis/rua-arborizada-800.webp", l: 71, t: 84, w: 9, d: 1.5 },
-    { src: "/img/carrosseis/espaco-gourmet-800.webp", l: 20, t: 85, w: 9, d: 0.9 },
+    { src: "/img/morada/avenida-ciclofaixa-800.webp", l: 84, t: 62, w: 12, lm: 74, tm: 88, wm: 24, d: 0.5 },
+    { src: "/img/morada/avenida-comercio-800.webp", l: 71, t: 84, w: 9, d: 1.5 },
+    { src: "/img/morada/stand-vendas-800.webp", l: 20, t: 85, w: 9, d: 0.9 },
   ],
 };
 
@@ -157,6 +157,31 @@ export const infraestrutura = {
   ],
 } as const;
 
+/** Lista e ordem da Morada dos Pássaros (moradadospassarosaraguaina.com.br). */
+export const infraCompleta = {
+  id: "infraestrutura-completa",
+  rotulo: "Infraestrutura completa",
+  titulo: { antes: "Um bairro completo para ", destaque: "você viver melhor!" },
+  botao: "Quero me cadastrar!",
+  itens: [
+    { titulo: "Pavimentação em CBUQ", icone: "pavimentacao" },
+    { titulo: "Meio-fio com sarjeta", icone: "meiofio" },
+    { titulo: "Rede de água", icone: "agua" },
+    { titulo: "Rede de esgoto", icone: "esgoto" },
+    { titulo: "Sinalização de trânsito", icone: "sinalizacao" },
+    { titulo: "Rede de drenagem pluvial", icone: "drenagem" },
+    { titulo: "Rede elétrica", icone: "eletrica" },
+    { titulo: "Iluminação pública em LED", icone: "iluminacao" },
+    { titulo: "Monitoramento por câmeras", icone: "cameras" },
+    { titulo: "Petplace", icone: "pet" },
+    { titulo: "Ciclofaixa", icone: "ciclofaixa" },
+    { titulo: "Playground infantil", icone: "playground" },
+    { titulo: "Pista cooper", icone: "cooper" },
+    { titulo: "Quadra de areia", icone: "areia" },
+    { titulo: "Quadra poliesportiva", icone: "poliesportiva" },
+  ],
+} as const;
+
 export const cadastro = {
   id: "cadastro",
   rotulo: "Condições de lançamento", // copy nova
@@ -194,15 +219,14 @@ export const cadastro = {
   copiado: "Copiado",
 };
 
-// Lista provisória, tirada dos renders de referência. Trocar pela lista oficial de lazer.
+// Itens de lazer da Morada dos Pássaros, na mesma ordem. Fotos só marcam posição.
 export const lazer = {
   id: "lazer",
   rotulo: "Lazer",
-  // copy nova
   abertura: {
-    titulo: "O fim de semana começa na rua de casa.",
-    texto: "Role a página: cada espaço entra por cima do anterior.",
-    imagem: { src: "/img/carrosseis/portaria-aerea.webp", alt: "Praça da entrada vista do alto" },
+    titulo: "Diversão e qualidade de vida para todas as idades", // Morada dos Pássaros
+    texto: "Role a página: cada espaço entra por cima do anterior.", // copy nova
+    imagem: { src: "/img/morada/portal-rotatoria.webp", alt: "Portal de entrada com rotatória" },
   },
   fechamento: {
     rotulo: "Condições de lançamento",
@@ -210,14 +234,14 @@ export const lazer = {
     texto: "Cadastre-se e receba a tabela, a planta com os lotes e o contato de um consultor.",
     botao: "Receber a tabela e a planta",
   },
+  // copy nova nos textos
   itens: [
-    { titulo: "Praça com espelho d'água", texto: "Deck de madeira, palmeiras e caminhos de pedra logo na entrada.", imagem: "/img/carrosseis/praca-lago.webp" },
-    { titulo: "Quadras de areia", texto: "Beach tennis e vôlei, com refletores para jogar à noite.", imagem: "/img/carrosseis/quadra-areia-800.webp" },
-    { titulo: "Campo de futebol", texto: "Gramado cercado, com um espaço coberto ao lado para quem assiste.", imagem: "/img/carrosseis/campo-futebol-800.webp" },
-    { titulo: "Quadra poliesportiva", texto: "Futsal e basquete no mesmo piso.", imagem: "/img/carrosseis/poliesportiva-800.webp" },
-    { titulo: "Quadra de tênis", texto: "Saibro, refletores e palmeiras em volta.", imagem: "/img/carrosseis/tenis-800.webp" },
-    { titulo: "Playground", texto: "Brinquedos sobre piso emborrachado, à vista de quem está nas quadras.", imagem: "/img/carrosseis/playground-800.webp" },
-    { titulo: "Espaço gourmet", texto: "Churrasqueira, mesas e cobertura para o encontro de domingo.", imagem: "/img/carrosseis/espaco-gourmet-800.webp" },
+    { titulo: "Petplace", texto: "Um espaço para o seu pet correr e brincar perto de casa.", imagem: "/img/carrosseis/praca-lago.webp" },
+    { titulo: "Ciclofaixa", texto: "Pedalar pelo bairro em uma faixa só para bicicletas.", imagem: "/img/morada/avenida-ciclofaixa.webp" },
+    { titulo: "Playground infantil", texto: "Um lugar para as crianças brincarem sem sair do bairro.", imagem: "/img/carrosseis/playground.webp" },
+    { titulo: "Pista cooper", texto: "Para caminhar e correr todos os dias, perto de casa.", imagem: "/img/carrosseis/alameda.webp" },
+    { titulo: "Quadra de areia", texto: "Beach tennis e vôlei sem sair do bairro.", imagem: "/img/carrosseis/quadra-areia.webp" },
+    { titulo: "Quadra poliesportiva", texto: "Futsal e basquete no mesmo piso.", imagem: "/img/carrosseis/poliesportiva.webp" },
   ],
 };
 
@@ -230,32 +254,31 @@ export const galeria = {
   rotuloLeque: "Perspectivas do bairro. Use as setas do teclado.",
   // copy nova nas descrições
   imagens: [
-    { src: "/img/carrosseis/vista-aerea-2-800.webp", titulo: "O bairro visto do alto", texto: "Ruas, quadras e áreas verdes desenhadas antes da primeira casa.", capitulo: "Chegada" },
-    { src: "/img/carrosseis/portal-lateral-800.webp", titulo: "Portal de entrada", texto: "Cobertura curva em concreto e madeira, com paisagismo dos dois lados.", capitulo: "Chegada" },
-    { src: "/img/carrosseis/acesso-800.webp", titulo: "Acesso", texto: "Rotatória com canteiros e palmeiras na chegada ao bairro.", capitulo: "Chegada" },
-    { src: "/img/carrosseis/portaria-aerea.webp", titulo: "Praça da entrada", texto: "Espelho d'água e caminhos de pedra logo depois do portal.", capitulo: "Chegada" },
+    { src: "/img/morada/localizacao-aerea-800.webp", titulo: "O bairro visto do alto", texto: "Ruas, quadras e áreas verdes desenhadas antes da primeira casa.", capitulo: "Chegada" },
+    { src: "/img/morada/entrada-aerea-800.webp", titulo: "Entrada do bairro", texto: "Portal, rotatória e a avenida principal com ciclofaixa.", capitulo: "Chegada" },
+    { src: "/img/morada/portal-frontal-800.webp", titulo: "Portal de entrada", texto: "A primeira imagem de quem chega ao bairro.", capitulo: "Chegada" },
+    { src: "/img/morada/portal-rotatoria-800.webp", titulo: "Acesso", texto: "Rotatória com canteiros e palmeiras na chegada ao bairro.", capitulo: "Chegada" },
     { src: "/img/carrosseis/parque-esportivo-800.webp", titulo: "Parque esportivo", texto: "Quadras de areia, playground e áreas de estar à sombra.", capitulo: "Lazer" },
-    { src: "/img/carrosseis/tenis-aerea-800.webp", titulo: "Quadra de tênis", texto: "Saibro com iluminação e um espaço de convivência ao lado.", capitulo: "Lazer" },
-    { src: "/img/carrosseis/campo-futebol-800.webp", titulo: "Campo de futebol", texto: "Gramado cercado, perto das quadras e do espaço coberto.", capitulo: "Lazer" },
-    { src: "/img/carrosseis/mercado-800.webp", titulo: "Comércio do dia a dia", texto: "Áreas para comércio dentro do bairro, perto de casa.", capitulo: "Ruas e comércio" },
-    { src: "/img/carrosseis/rua-arborizada-800.webp", titulo: "Ruas arborizadas", texto: "Canteiro central com palmeiras e calçadas largas.", capitulo: "Ruas e comércio" },
-    { src: "/img/carrosseis/alameda.webp", titulo: "Alameda verde", texto: "Um caminho com bancos à sombra das árvores.", capitulo: "Ruas e comércio" },
+    { src: "/img/carrosseis/poliesportiva-800.webp", titulo: "Quadra poliesportiva", texto: "Futsal e basquete no mesmo piso.", capitulo: "Lazer" },
+    { src: "/img/carrosseis/playground-800.webp", titulo: "Playground infantil", texto: "Um lugar para as crianças brincarem sem sair do bairro.", capitulo: "Lazer" },
+    { src: "/img/morada/avenida-ciclofaixa-800.webp", titulo: "Avenida com ciclofaixa", texto: "Canteiro central com palmeiras e uma faixa só para bicicletas.", capitulo: "Ruas e comércio" },
+    { src: "/img/morada/avenida-comercio-800.webp", titulo: "Comércio do dia a dia", texto: "Áreas para comércio dentro do bairro, perto de casa.", capitulo: "Ruas e comércio" },
+    { src: "/img/morada/stand-vendas-800.webp", titulo: "Stand de vendas", texto: "Venha conhecer o projeto de perto.", capitulo: "Ruas e comércio" },
   ],
 };
 
-/** Pontos sobre a vista aérea. x e y em % da imagem. Refazer com a implantação oficial. */
+/** Pontos sobre a implantação (da Morada dos Pássaros, só marcação). x e y em % da imagem. Refazer com a implantação oficial. */
 export const mapa = {
   id: "mapa",
   rotulo: "Mapa do bairro",
   dica: "Passe o mouse ou toque nos pontos. Cada um abre uma parte do bairro.", // copy nova
-  imagem: { src: "/img/carrosseis/vista-aerea-mapa.webp", alt: "Vista aérea do bairro com ruas, quadras e lotes", largura: 1600, altura: 727 },
+  imagem: { src: "/img/morada/implantacao.webp", alt: "Implantação do bairro com ruas, quadras e lotes", largura: 1536, altura: 776 },
   pontos: [
-    { titulo: "Portal de entrada", texto: "Paisagismo e uma praça com espelho d'água logo na chegada.", x: 8, y: 28 },
-    { titulo: "Parque esportivo", texto: "Quadras de areia, playground e áreas de estar.", x: 55, y: 22 },
-    { titulo: "Campo e poliesportiva", texto: "Futebol, basquete e futsal sem sair do bairro.", x: 66, y: 19 },
-    { titulo: "Alameda verde", texto: "Caminho arborizado com bancos, de ponta a ponta.", x: 47, y: 43 },
-    { titulo: "Área comercial", texto: "Espaço reservado para o comércio do dia a dia.", x: 78, y: 8 },
-    { titulo: "Quadra de tênis", texto: "Saibro com iluminação e convivência ao lado.", x: 79, y: 65 },
+    { titulo: "Entrada do bairro", texto: "Portal e rotatória na chegada pela avenida principal.", x: 41, y: 78 },
+    { titulo: "Avenida com ciclofaixa", texto: "Canteiro central com palmeiras e faixa só para bicicletas.", x: 41, y: 40 },
+    { titulo: "Área verde central", texto: "Um grande espaço verde no meio do bairro.", x: 48.5, y: 55 },
+    { titulo: "Praça de lazer", texto: "Playground, quadras e petplace perto de casa.", x: 82.5, y: 48 },
+    { titulo: "Bosque", texto: "Mata preservada dentro do bairro.", x: 75, y: 60 },
   ],
 };
 

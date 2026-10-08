@@ -5,6 +5,7 @@ import { Fitas } from "@/secoes/Fitas";
 import { Sobre } from "@/secoes/Sobre";
 import { FotoImersiva } from "@/secoes/FotoImersiva";
 import { Infraestrutura } from "@/secoes/Infraestrutura";
+import { InfraCompleta } from "@/secoes/InfraCompleta";
 import { Cadastro } from "@/secoes/Cadastro";
 import { LazerHistoria } from "@/secoes/LazerHistoria";
 import { GaleriaLeque } from "@/secoes/GaleriaLeque";
@@ -35,6 +36,7 @@ export default function Home() {
           bolha={fotoBairro.bolha}
         />
         <Infraestrutura />
+        <InfraCompleta />
         <Cadastro />
         <LazerHistoria />
         <GaleriaLeque />
