@@ -1,22 +1,15 @@
 import type { NextConfig } from "next";
 
+/**
+ * App Node na Hostinger (next build + next start). Não é mais export estático:
+ * o envio do lead roda na rota src/app/api/lead/route.ts.
+ */
 const nextConfig: NextConfig = {
-  // Build estático: gera out/ para subir no public_html (mesmo padrão do Harmoni Jardins).
-  output: "export",
-  // Sem servidor Node, o otimizador de imagem do Next não roda.
+  // Imagens já vão otimizadas (webp no tamanho de exibição): não precisa do otimizador.
   images: { unoptimized: true },
-  // Nginx serve /pagina/ melhor do que /pagina.html
   trailingSlash: true,
   // Desliga a geração automática do AGENTS.md pelo `next dev`
   agentRules: false,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
 };
 
 export default nextConfig;

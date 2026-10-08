@@ -63,11 +63,11 @@ export const redes = [
 ] as const;
 
 /**
- * Caminho do lead: form -> /api/lead.php -> RD Station -> integração nativa -> CV CRM.
- * O idempreendimento e a API key ficam no config do servidor, fora do webroot.
+ * Caminho do lead: form -> /api/lead/ (src/app/api/lead/route.ts) -> RD Station -> integração nativa -> CV CRM.
+ * A API key e o idempreendimento ficam nas variáveis de ambiente da Hostinger, nunca aqui.
  */
 export const lead = {
-  endpoint: "/api/lead.php",
+  endpoint: "/api/lead/",
 };
 
 export const header = {

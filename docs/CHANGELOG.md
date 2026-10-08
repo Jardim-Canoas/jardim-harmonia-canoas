@@ -76,3 +76,16 @@ accordion do FAQ e voltar ao topo.
 **Pendente:** telefone/WhatsApp, e-mail, stand, CNPJ, Instagram, YouTube,
 registro do memorial, domínio em `seo.url`, frase própria do Harmoni
 Essenza, imagens oficiais e lista oficial de lazer.
+
+## 2026-10-08 — Deploy como app Node na Hostinger
+
+**O que:** o build falhou na Hostinger por causa do loader
+`@tailwindcss/turbopack` (gerava `globals.css.css`). Troquei pelo setup
+oficial `@tailwindcss/postcss` com `postcss.config.mjs`. O projeto deixou
+de ser export estático: o `lead.php` virou a rota `src/app/api/lead/route.ts`,
+com a mesma lógica (isca, validação, E.164, LGPD, origem, retry no 429).
+Chave do RD e idempreendimento passam a ser variáveis de ambiente.
+
+**Verificado:** `tsc`, `eslint`, `next build` e `next start` locais. Página
+com CSS ok; API respondeu certo sem chave, com isca, com telefone inválido
+e com chave inválida (502, lead no log). Envio real ao RD não testado.

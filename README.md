@@ -4,7 +4,7 @@ Landing page de lançamento do **Jardim Harmonia**, bairro planejado da
 Nova Harmonia em Canoas/RS.
 
 - Stack: Next.js (App Router) + TypeScript + Tailwind CSS v4
-- Build: export estático (`output: 'export'`)
+- Build: app Node (`next build` + `next start`), hospedado na Hostinger
 
 ## Estrutura
 
@@ -15,7 +15,6 @@ jardim-harmonia-canoas/
 │   ├── IMAGENS.md         inventário das imagens e o que ainda falta
 │   └── MARCA.md           cores, logo e tipografia
 ├── public/                estáticos — vira a raiz do site no servidor
-│   ├── api/lead.php       recebimento do formulário
 │   └── img/
 │       ├── logo/          4 versões do logo
 │       ├── banners/       hero e faixas de largura total
@@ -31,10 +30,13 @@ jardim-harmonia-canoas/
     └── secoes/            um componente por bloco da página
 ```
 
-## Sobre `public/` e `public_html`
+## Deploy (Hostinger, app Node.js via GitHub)
 
-`npm run build` gera a pasta `out/` com tudo dentro. É o **conteúdo de
-`out/` que sobe para o `public_html`** do servidor.
+- Configuração predefinida: Next.js · Node 22.x
+- Comando de construção: `npm run build` · Diretório de saída: `.next`
+- Variáveis de ambiente: ver `.env.example` (`RD_API_KEY` é obrigatória).
+- O formulário posta em `/api/lead/` (`src/app/api/lead/route.ts`), que
+  envia ao RD Station. Falhas vão para o log do app com o lead inteiro.
 
 ## Regra de ouro
 
