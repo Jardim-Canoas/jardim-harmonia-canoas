@@ -34,4 +34,14 @@ Só use os arquivos entregues. Não redesenhe nem mude proporção.
 
 ## Tipografia
 
-Sem definição. Fonte provisória: Geist. A definitiva sai dos protótipos.
+Plus Jakarta Sans em títulos e texto (escolhida no protótipo), servida
+pelo próprio site via `next/font`.
+
+## Símbolo
+
+`simbolo-verde.svg` e `simbolo-areia.svg` são o mesmo SVG do logo com o
+`viewBox` recortado só na casa + árvore. Usados no header.
+
+## Apoio
+
+`--ipe` #e2b53e (acento amarelo), `--noite` #0f1f12, `--papel` #f7f6f1.

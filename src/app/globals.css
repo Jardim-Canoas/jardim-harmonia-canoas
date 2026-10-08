@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * Paleta tirada das 4 versões oficiais do logo (pasta _materiais/logo).
+ * Paleta tirada das 4 versões oficiais do logo (ver docs/MARCA.md).
  * Tema único (sem dark mode): é LP de marca.
  */
 :root {
@@ -13,6 +13,16 @@
   --tinta-suave: #4a4a45;
   --branco: #ffffff;
   --erro: #b42318;
+  /* apoio de interface */
+  --noite: #0f1f12;
+  --papel: #f7f6f1;
+  --ipe: #e2b53e;
+  --linha-escura: rgba(29, 29, 27, 0.14);
+  --linha-clara: rgba(215, 203, 174, 0.22);
+  --gutter: clamp(16px, 4vw, 56px);
+  /* tipografia: Plus Jakarta Sans em títulos e texto */
+  --f-titulo: var(--font-jakarta), "Segoe UI", system-ui, sans-serif;
+  --f-texto: var(--font-jakarta), "Segoe UI", system-ui, sans-serif;
 }
 
 @theme inline {
@@ -23,7 +33,7 @@
   --color-tinta: var(--tinta);
   --color-tinta-suave: var(--tinta-suave);
   --color-erro: var(--erro);
-  --font-sans: var(--font-sans-base);
+  --font-sans: var(--f-texto);
 }
 
 html {
@@ -37,12 +47,22 @@ html {
 }
 
 body {
-  background: var(--areia-clara);
+  background: var(--branco);
   color: var(--tinta);
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
 h3 {
   text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ipe);
+  outline-offset: 3px;
 }

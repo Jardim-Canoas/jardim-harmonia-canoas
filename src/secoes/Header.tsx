@@ -1,24 +1,50 @@
-import Image from "next/image";
-import { cadastro, header } from "@/dados";
+"use client";
 
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { cadastro, header } from "@/dados";
+import { linkWhatsapp } from "./whatsapp";
+
+// Só o símbolo do logo. Fica sólido ao rolar e claro sobre o hero escuro (data-hero-escuro).
 export function Header() {
+  const [solido, setSolido] = useState(false);
+  const whats = linkWhatsapp();
+
+  useEffect(() => {
+    const aoRolar = () => setSolido(window.scrollY > 60);
+    aoRolar();
+    window.addEventListener("scroll", aoRolar, { passive: true });
+    return () => window.removeEventListener("scroll", aoRolar);
+  }, []);
+
   return (
-    <header className="absolute inset-x-0 top-0 z-10">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-        <Image
-          src="/img/logo/logo-areia.svg"
-          alt={header.logoAlt}
-          width={1652}
-          height={1475}
-          priority
-          className="h-14 w-auto sm:h-16"
-        />
-        <a
-          href={`#${cadastro.id}`}
-          className="inline-flex min-h-11 items-center rounded-full bg-areia px-5 text-sm font-semibold text-verde-escuro transition-colors duration-200 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-areia"
-        >
-          {header.botao}
+    <header className={`cab${solido ? " solido" : ""}`}>
+      <div className="wrap">
+        <a className="marca" href="#" aria-label={header.logoAlt}>
+          <Image className="escuro" src="/img/logo/simbolo-verde.svg" alt="" width={1324} height={452} priority />
+          <Image className="claro" src="/img/logo/simbolo-areia.svg" alt="" width={1324} height={452} priority />
         </a>
+        <nav aria-label="Seções">
+          <ul>
+            {header.menu.map((m) => (
+              <li key={m.ancora}>
+                <a href={`#${m.ancora}`}>{m.rotulo}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="acoes">
+          <a
+            className="bt bt-linha so-desk"
+            href={whats || `#${cadastro.id}`}
+            {...(whats && { target: "_blank", rel: "noopener" })}
+          >
+            {header.botaoWhatsapp}
+          </a>
+          <a className="bt bt-verde" href={`#${cadastro.id}`}>
+            {header.botao}
+          </a>
+        </div>
       </div>
     </header>
   );
